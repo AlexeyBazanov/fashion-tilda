@@ -21,7 +21,7 @@ module.exports = {
     fonts: 'build/fonts',
   },
   inject: {
-    html: 'build/html/*.html',
+    html: 'build/html/**/*.html',
     css: 'build/css/**/*.css',
     js: 'build/js/**/*.js',
   },

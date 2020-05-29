@@ -10,6 +10,7 @@ const size = require('gulp-size');
 // const usedcss = require('usedcss');
 const rename = require('gulp-rename');
 const mode = require('gulp-mode')();
+const cleanCSS = require('gulp-clean-css');
 
 const paths = require('../paths');
 
@@ -37,6 +38,7 @@ const css = () => {
     )
     .pipe(mode.development(sourcemaps.write()))
     .pipe(size({ showFiles: true }))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     // .pipe(rename('styles.css'))
     .pipe(gulp.dest(paths.build.css));
 };

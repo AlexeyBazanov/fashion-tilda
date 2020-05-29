@@ -9,7 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://luxplanjay.github.io/gulp-starter-kit",
+  "homepage": "https://github.com/AlexeyBazanov/fashion-tilda.git",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luxplanjay/gulp-starter-kit.git"
@@ -31,11 +31,14 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cache-bust": "^1.4.1",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-inject": "^5.0.5",
+    "gulp-inject-css": "^2.0.1",
+    "gulp-minify": "^3.1.0",
     "gulp-mode": "^1.0.2",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
