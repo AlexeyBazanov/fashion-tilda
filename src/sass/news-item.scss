@@ -71,6 +71,10 @@
   text-align: center;
 }
 
+.tn-atom__videoiframe {
+  height: 400px !important;
+}
+
 @media (max-width:480px)  {
   .news-row {
     padding: 20px;

@@ -3,9 +3,9 @@ const injectLib = require('gulp-inject');
 const paths = require('../paths');
 
 const injectCssToHtml = () => {
-  const sources = gulp.src([paths.inject.css, paths.inject.js], {
-    read: false,
-  });
+  // const sources = gulp.src([paths.inject.css, paths.inject.js], {
+  //   read: false,
+  // });
 
   // return gulp
   //   .src(paths.inject.html)
@@ -14,8 +14,8 @@ const injectCssToHtml = () => {
 
   return gulp.src(paths.inject.html)
     .pipe(injectLib(gulp.src(paths.inject.css), {
-      starttag: '/* inject:{{path}} */',
-      endtag: '/* endinject */',
+      starttag: '/* inject-css:{{path}} */',
+      endtag: '/* endinject-css */',
       relative: true,
       transform: function (filePath, file) {
         // return file contents as string

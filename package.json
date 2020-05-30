@@ -7,7 +7,7 @@
     "start": "cross-env PORT=1234 gulp start --development ",
     "build": "gulp build --production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "cpy .\\build\\** D:\\google_drive\\Fast.io\\fashiontilda.imfast.io --parents"
   },
   "homepage": "https://github.com/AlexeyBazanov/fashion-tilda.git",
   "repository": {
