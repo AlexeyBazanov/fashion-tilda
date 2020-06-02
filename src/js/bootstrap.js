@@ -15,6 +15,24 @@
       ).appendTo('head');
       console.log('Адаптивные стили для страницы со списком новостей подгружены.');
       break;
+    case '/partners':
+      $('<script/>',
+        {
+          src: 'https://fashiontilda.imfast.io/build/js/partners.js',
+          type: 'text/javascript'
+        }
+      ).appendTo('head');
+      console.log('Адаптивные стили для страницы со списком парнеров подгружены.');
+      break;
+    case '/about':
+      $('<script/>',
+        {
+          src: 'https://fashiontilda.imfast.io/build/js/about.js',
+          type: 'text/javascript'
+        }
+      ).appendTo('head');
+      console.log('Адаптивные стили для страницы «О нас» подгружены.');
+      break;
     case '/':
       break;
     default:

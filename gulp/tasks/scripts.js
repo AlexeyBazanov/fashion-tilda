@@ -14,7 +14,7 @@ const scripts = () => {
     .pipe(babel())
     // .pipe(concat('scripts.js'))
     .pipe(mode.production(uglify()))
-    .pipe(minify())
+    // .pipe(minify())
     .pipe(gulp.dest(paths.build.js));
 };
 

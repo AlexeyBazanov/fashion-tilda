@@ -1,0 +1,61 @@
+#allrecords > .t-rec {
+  display: none !important;
+}
+
+#t-header {
+  .t396__artboard.rendered {
+    opacity: 1 !important;
+  }
+}
+
+.partners-title {
+  color: black;
+  font-size: 36px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 35px 0 15px 0;
+
+  &:first-of-type {
+    margin-top: 80px;
+  }
+}
+
+.partners-img-wrapper {
+  text-align: center;
+}
+
+.partners-img {
+  height: 150px;
+  width: 200px;
+  background-size: contain !important;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.swiper-lazy {
+  height: 240px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 180px !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ff8903 !important;
+}
+
+.swiper-lazy-preloader {
+  border-color: #ff8903 !important;
+  border-top-color: transparent !important;
+}
+
+.swiper-container {
+  margin: 0 !important;
+  height: 240px !important;
+  background: white !important;
+}
+
+
+

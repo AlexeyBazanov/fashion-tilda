@@ -23,10 +23,43 @@ const serve = () => {
 const watcher = done => {
   watch(paths.watch.html).on(
     'change',
-    series(tasks.html, tasks.inject_css_to_js, tasks.inject_css_to_html, tasks.inject_js_to_html, browserSync.reload),
+    series(
+      tasks.clean,
+      tasks.images,
+      parallel(tasks.css, tasks.fonts, tasks.scripts, tasks.html),
+      tasks.inject_css_to_js,
+      tasks.inject_html_to_js,
+      tasks.inject_js_to_html,
+      tasks.inject_css_to_html,
+      browserSync.reload
+    )
   );
-  watch(paths.watch.css).on('change', series(tasks.css, browserSync.reload));
-  watch(paths.watch.js).on('change', series(tasks.scripts, browserSync.reload));
+  watch(paths.watch.css).on(
+    'change',
+    series(
+      tasks.clean,
+      tasks.images,
+      parallel(tasks.css, tasks.fonts, tasks.scripts, tasks.html),
+      tasks.inject_css_to_js,
+      tasks.inject_html_to_js,
+      tasks.inject_js_to_html,
+      tasks.inject_css_to_html,
+      browserSync.reload
+    )
+  );
+  watch(paths.watch.js).on(
+    'change',
+    series(
+      tasks.clean,
+      tasks.images,
+      parallel(tasks.css, tasks.fonts, tasks.scripts, tasks.html),
+      tasks.inject_css_to_js,
+      tasks.inject_html_to_js,
+      tasks.inject_js_to_html,
+      tasks.inject_css_to_html,
+      browserSync.reload
+    )
+  );
   watch(paths.watch.images, tasks.images);
   watch(paths.watch.fonts, tasks.fonts);
 
@@ -38,8 +71,9 @@ exports.start = series(
   tasks.images,
   parallel(tasks.css, tasks.fonts, tasks.scripts, tasks.html),
   tasks.inject_css_to_js,
-  tasks.inject_css_to_html,
+  tasks.inject_html_to_js,
   tasks.inject_js_to_html,
+  tasks.inject_css_to_html,
   watcher,
   serve,
 );
@@ -49,6 +83,7 @@ exports.build = series(
   tasks.images,
   parallel(tasks.css, tasks.fonts, tasks.scripts, tasks.html),
   tasks.inject_css_to_js,
+  tasks.inject_html_to_js,
   tasks.inject_css_to_html,
   tasks.inject_js_to_html,
 );
