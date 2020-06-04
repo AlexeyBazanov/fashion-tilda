@@ -1,3 +1,4 @@
+// Slider ----->
 .swiper-button-prev, .swiper-button-next {
   color: #ff8903 !important;
 }
@@ -6,3 +7,36 @@
   border-color: #ff8903 !important;
   border-top-color: transparent !important;
 }
+// Slider <-----
+
+// Footer ----->
+#rec116129386 {
+
+  @media (max-width: 988px) {
+    .t447__title {
+      font-size: 22px;
+    }
+
+    .t447__descr a {
+      font-size: 18px;
+    }
+
+    .t447__blockinput {
+      display: inline-block;
+      width: 70%;
+    }
+
+    .t447__blockbutton {
+      width: 20%;
+      display: inline-block;
+      position: relative;
+      bottom: 7px;
+    }
+
+    .t447__text {
+      margin-top: 0;
+    }
+  }
+
+}
+// Footer <-----

@@ -4,6 +4,11 @@
     return false;
   }
 
+  // Вставляем общие стили
+  $("<style/>", {
+    text: "/* inject:../css/common.css */ /* endinject */",
+  }).appendTo("head");
+
   // Пробегаемся по всем страницам, кроме новостей и брендов
   switch (window.location.pathname) {
     case '/news':
@@ -33,7 +38,14 @@
       ).appendTo('head');
       console.log('Адаптивные стили для страницы «О нас» подгружены.');
       break;
-    case '/':
+    case '/designers':
+      $('<script/>',
+        {
+          src: 'https://fashiontilda.imfast.io/build/js/brands-list.js',
+          type: 'text/javascript'
+        }
+      ).appendTo('head');
+      console.log('Адаптивные стили для страницы «Дизайнеры» подгружены.');
       break;
     default:
       break;
@@ -41,11 +53,17 @@
 
   // Определяем страницу с брендами
   if($('.tn-atom.t-bgimg').filter(function() { return $(this).css('border-radius') === '3000px' } ).length === 1) {
+    $('<script/>',
+      {
+        src: 'https://fashiontilda.imfast.io/build/js/brand-item.js',
+        type: 'text/javascript'
+      }
+    ).appendTo('head');
     console.log('Адаптивные стили для страницы с брендом подгружены.');
   }
 
   // Определяем страницу с брендами
-  if($('.tn-atom').filter(function() { return $(this).text() === 'Смотреть все фото' } ).length > 0) {
+  if($('.tn-atom').filter(function() { return ['смотреть все фото', 'пресс-релиз', 'читайте также'].includes( $(this).text().toLowerCase() ) } ).length > 0) {
     $('<script/>',
       {
         src: 'https://fashiontilda.imfast.io/build/js/news-item.js',

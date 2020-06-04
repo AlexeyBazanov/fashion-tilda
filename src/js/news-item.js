@@ -1,18 +1,7 @@
 $(document).ready(function () {
-  // Останавливаем выполнение функции, если экран больше 988 пикселей
-  if (window.screen.width > 988) {
-    console.log("screen width > 988px");
-    return;
-  }
 
   // Находим все блоки с контентом
   var items = $(".t-rec");
-
-  // Скрываем старые блоки
-  items.hide();
-
-  // Показываем контейнер с лоадером
-  $('#loader').parents('.t-rec').show();
 
   // Итерируем все блоки с контентом
   items.each(function (index, item) {
@@ -24,29 +13,53 @@ $(document).ready(function () {
     // Создаем новый блок, в который будем добавлять вытащенный из скрытых элементов контент
     var row = $("<div/>", {
       class: "news-row",
-    }).appendTo("body");
+    }).insertBefore('#allrecords > .t-rec_pt_120');
 
     // Переделываем название новости
-    if ($(item).prev().attr('id') == 't-header') {
+    if ($(item).prev().attr('id') === 't-header') {
+
+      var title_date;
+      var title_texts = [];
 
       $(item).find('.tn-atom').each(function (idx, elem) {
+
         var block = $(elem);
 
-        if (["50px", "30px"].includes(block.css("font-size"))) {
+        if (["50px", "30px", "25px"].includes(block.css("font-size"))) {
           $('<h1/>', {
             class: 'news-name',
             html: block.html()
           }).appendTo(row);
         }
 
-        if (block.css("font-size") == "15px") {
-          $('<div/>', {
-            class: 'news-date',
-            text: block.text()
-          }).appendTo(row);
+        if (block.css("font-size") === "15px") {
+
+          if(block.text().length > 30) {
+            title_texts.push(block.text());
+          } else {
+            title_date = block.text();
+          }
+
         }
 
       });
+
+      if(title_date) {
+        $('<div/>', {
+          class: 'news-date',
+          text: title_date
+        }).appendTo(row);
+      }
+
+      if(title_texts.length) {
+        for (var i = 0; i < title_texts.length; i++) {
+          $('<div/>', {
+            class: 'news-text',
+            text: title_texts[i],
+            style: 'margin-top: 20px'
+          }).appendTo(row);
+        }
+      }
 
       return true;
     }
@@ -58,7 +71,7 @@ $(document).ready(function () {
         var block = $(element);
 
         // Ищем старые заголовки и создаем новые
-        if (block.hasClass("tn-atom") && block.css("font-size") == "35px") {
+        if (block.hasClass("tn-atom") && block.css("font-size") === "35px") {
           $("<h2/>", {
             class: "news-title",
             text: block.text(),
@@ -76,8 +89,25 @@ $(document).ready(function () {
           }).appendTo(row);
         }
 
+        // Вытаскиваем цитаты
+        if(block.hasClass('t253')) {
+          var quoteWrapper = $("<div/>", {
+            class: "news-quote",
+          }).appendTo(row);
+
+          $("<div/>", {
+            class: "news-quote_text",
+            text: block.find('.t253__text').text()
+          }).appendTo(quoteWrapper);
+
+          $("<div/>", {
+            class: "news-quote_author",
+            text: block.find('.t253__author').text()
+          }).appendTo(quoteWrapper);
+        }
+
         // Ищем картинку превью и галерею, заменяем на слайдер
-        if (block.hasClass("tn-atom") && block.text() == 'Смотреть все фото') {
+        if (block.hasClass("tn-atom") && block.text() === 'Смотреть все фото') {
           var images = [];
           // images.push(block.attr("data-original"));
           var popup_images = $(
@@ -114,19 +144,19 @@ $(document).ready(function () {
                 class: "swiper-slide",
               }).appendTo(slider_container);
 
-              $("<img>", {
-                "data-src": images[i],
+              var slide_image = $("<div/>", {
+                "data-background": images[i],
                 class: "swiper-lazy",
               }).appendTo(slide);
 
               $("<div/>", {
                 class: "swiper-lazy-preloader",
-              }).appendTo(slide);
+              }).appendTo(slide_image);
             }
           }
         }
 
-        if (block.hasClass("tn-atom") && block.text() == 'Смотреть все видео') {
+        if (block.hasClass("tn-atom") && block.text() === 'Смотреть все видео') {
           var videos = [];
 
           var popup_video = $(
@@ -175,22 +205,21 @@ $(document).ready(function () {
       });
 
     // Удаляем блок, если нет элементов
-    if (row.children().length == 0) {
+    if (row.children().length === 0) {
       row.hide();
     }
 
   });
 
-  // Отображаем верхнее меню
-  $('#t-header .t-rec').show();
+  // Проставляем стиль фона для всех элементов-картинок. Скрваем картинки которые уже есть в слайдерах.
+  $('.news-text .tn-atom__img').each(function (index, element) {
+    var img_block = $(element);
+    img_block.css('background-image', 'url('+ img_block.attr('data-original') +')');
 
-  // Отображаем блок "Читайте так же"
-  $('.t-col').parents('.t-rec').appendTo('body').show();
-  $('.t-col').parents('.t-rec').appendTo('body').show();
-
-  // Переносим футер в конец тела документа и отображаем
-  var footer = $('#t-footer').appendTo('body');
-  footer.find('.t-rec').show();
+    if(img_block.parent().next().hasClass('swiper-container')) {
+      img_block.hide();
+    }
+  });
 
   // Добавляем дополнительные стили для новых блоков
   $("<style/>", {

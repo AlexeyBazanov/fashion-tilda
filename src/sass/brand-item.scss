@@ -1,0 +1,155 @@
+#allrecords > .t-rec {
+  display: none !important;
+}
+
+.brand-title {
+  color: #000000;
+  font-size: 35px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 70px;
+
+  @media (max-width: 450px) {
+    font-size: 28px;
+    text-align: left;
+  }
+}
+
+.brand-sub-title {
+  color: #000000;
+  font-size: 20px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+  @media (max-width: 450px) {
+    font-size: 18px;
+    text-align: left;
+  }
+}
+
+.brand-icon {
+  height: 120px;
+  width: 120px;
+  margin: 0 auto 20px auto;
+  border-radius: 3000px;
+  background-size: cover;
+}
+
+.brand-description {
+  color: #000000;
+  font-size: 18px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+  @media (min-width: 550px) and (max-width: 980px) {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+.brand-collections-title, .brand-collection-name, .instagram-screenshots-title {
+  color: #000000;
+  font-size: 18px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.brand-collections-title {
+  margin: 30px 0 20px 0;
+  font-size: 24px;
+}
+
+.instagram-screenshots-title {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.instagram-screenshots-link {
+  display: block;
+  width: 180px;
+  height: 35px;
+  margin: 0 auto 40px auto;
+  background: #3d3936;
+  color: white !important;
+  font-size: 18px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+  &:hover, &:active {
+    opacity: 0.7;
+  }
+}
+
+.brand-title, .brand-sub-title, .brand-description, {
+  padding: 0 20px;
+}
+
+.brand-instagram-link, .brand-facebook-link, .brand-youtube-link, .brand-vk-link {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-size: contain;
+  margin: 0 8px;
+}
+
+.brand-links-wrapper {
+  text-align: center;
+}
+
+.swiper-lazy {
+  height: 240px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 180px !important;
+
+  &.swiper-lazy-instagram {
+    height: 180px !important;
+    background-size: 260px !important;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ff8903 !important;
+}
+
+.swiper-lazy-preloader {
+  border-color: #ff8903 !important;
+  border-top-color: transparent !important;
+}
+
+.swiper-container {
+  margin: 10px 0 20px 0;
+  height: 240px !important;
+  background: white !important;
+
+  &.swiper-container-instagram {
+    height: 180px !important;
+  }
+}
