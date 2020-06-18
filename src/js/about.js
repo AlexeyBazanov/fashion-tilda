@@ -10,7 +10,12 @@ $(document).ready(function () {
     href: "https://unpkg.com/swiper/css/swiper.min.css",
   }).appendTo("head");
 
-  document.getElementById('t-footer').insertAdjacentHTML('beforeBegin', '/* inject-html:../html/about-partial.html */ /* endinject-html */');
+  // Вставляем в документ верстку. Русскую для русскоязычной версии сайта и английскую для англоязчной
+  if(window.location.hostname === 'generaltestfashion.tilda.ws') {
+    document.getElementById('t-footer').insertAdjacentHTML('beforeBegin', '/* inject-html:../html/about-partial.html */ /* endinject-html */');
+  } else {
+    document.getElementById('t-footer').insertAdjacentHTML('beforeBegin', '/* inject-html:../html/about-partial-eng.html */ /* endinject-html */');
+  }
 
   // Подгружаем скрипт слайдера и после загрузки инициализируем все слайдеры на странице
   var slider = document.createElement("script");

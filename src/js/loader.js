@@ -1,5 +1,6 @@
 (function () {
   if(window.screen.width > 998) {
+    document.querySelector("#loader").style.display = 'none';
     return false;
   }
   document.onreadystatechange = function () {

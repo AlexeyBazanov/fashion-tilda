@@ -1,0 +1,33 @@
+.swiper-button-prev, .swiper-button-next {
+  color: black !important;
+}
+
+.swiper-lazy-preloader {
+  border-color: black !important;
+  border-top-color: transparent !important;
+}
+
+.swiper-container {
+  background: white !important;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+.slide-title {
+  display: table-cell;
+  padding-bottom: 5px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  text-transform: uppercase;
+}
+

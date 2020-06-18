@@ -81,7 +81,7 @@ $(document).ready(function () {
         // Ищем старый текст новостей и создаем новый
         if (
           block.hasClass("tn-atom") && ["14px", "16px", "20px"].includes(block.css("font-size")) &&
-          !["Смотреть все фото", "Смотреть все видео"].includes(block.text())
+          !["Смотреть все фото", "Смотреть все видео", "All photos", "All videos"].includes(block.text())
         ) {
           $("<div/>", {
             class: "news-text",
@@ -107,7 +107,7 @@ $(document).ready(function () {
         }
 
         // Ищем картинку превью и галерею, заменяем на слайдер
-        if (block.hasClass("tn-atom") && block.text() === 'Смотреть все фото') {
+        if (block.hasClass("tn-atom") && ['Смотреть все фото', 'All photos'].includes(block.text())) {
           var images = [];
           // images.push(block.attr("data-original"));
           var popup_images = $(
@@ -156,7 +156,7 @@ $(document).ready(function () {
           }
         }
 
-        if (block.hasClass("tn-atom") && block.text() === 'Смотреть все видео') {
+        if (block.hasClass("tn-atom") && ['Смотреть все видео', 'All videos'].includes(block.text())) {
           var videos = [];
 
           var popup_video = $(
