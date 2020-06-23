@@ -47,10 +47,10 @@
 
 .brand-description {
   color: #000000;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'BebasNeue',Arial,sans-serif;
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -61,7 +61,7 @@
   }
 
   @media (max-width: 450px) {
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
   }
 }
@@ -107,6 +107,26 @@
   }
 }
 
+.brand-collection-gallery-link {
+  display: block;
+  padding-top: 9px;
+  width: 140px;
+  height: 29px;
+  margin: 0 auto;
+  background: #3d3936;
+  color: white !important;
+  font-size: 18px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover, &:active {
+    opacity: 0.7;
+  }
+}
+
 .brand-title, .brand-sub-title, .brand-description, {
   padding: 0 20px;
 }
@@ -124,10 +144,11 @@
 }
 
 .swiper-lazy {
-  height: 240px !important;
+  height: 380px !important;
+  margin-bottom: 5px;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-size: 180px !important;
+  background-size: contain !important;
 
   &.swiper-lazy-instagram {
     height: 180px !important;
@@ -146,10 +167,17 @@
 
 .swiper-container {
   margin: 10px 0 20px 0;
-  height: 240px !important;
   background: white !important;
 
   &.swiper-container-instagram {
     height: 180px !important;
   }
+}
+
+.lg-backdrop.in {
+  z-index: 999998;
+}
+
+.lg-outer {
+  z-index: 999999 !important;
 }

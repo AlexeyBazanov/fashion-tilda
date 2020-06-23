@@ -74,6 +74,10 @@ $(document).ready(function () {
               if ($(this).height() > titleMaxHeight) { titleMaxHeight = $(this).height(); }
             });
             slideTitles.height(titleMaxHeight);
+            slideTitles.width($(element).find('.swiper-slide').width());
+          },
+          resize: function () {
+            $(element).find('.slide-title').width($(element).find('.swiper-slide').width());
           },
         },
       });
