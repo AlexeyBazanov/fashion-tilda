@@ -1,0 +1,44 @@
+.swiper-button-prev, .swiper-button-next {
+  color: #ff8903 !important;
+}
+
+.swiper-lazy-preloader {
+  border-color: black !important;
+  border-top-color: transparent !important;
+}
+
+.swiper-container {
+  margin: 30px 0;
+  background: white !important;
+
+  @media (min-width: 1280px) {
+    margin: 50px 0;
+    width: 63%;
+  }
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+.slide-title {
+  display: table-cell;
+  padding-bottom: 5px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 200;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
+}
+
+

@@ -121,7 +121,7 @@ $(document).ready(function () {
           var images_length = images.length;
 
           if (images_length > 0) {
-            // Создаем контйнер слайдера
+            // Создаем контейнер слайдера
             var slider = $("<div/>", {
               class: "swiper-container",
             }).appendTo(row);

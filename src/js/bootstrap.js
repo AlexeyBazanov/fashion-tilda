@@ -1,5 +1,17 @@
 (function () {
 
+  // Подгружаем скрипты и стили для страницы с видео галереей
+  if(window.location.pathname === '/videogallery') {
+    $('<script/>',
+      {
+        src: 'https://fashiontilda.imfast.io/build/js/video.js',
+        type: 'text/javascript'
+      }
+    ).appendTo('head');
+    console.log('Скрипты и стили для видео галереи подгружены.')
+  }
+
+  // Если это не мобильное устройство - прерываем выполнение скрипта
   if(window.screen.width > 998) {
     return false;
   }
@@ -46,6 +58,15 @@
         }
       ).appendTo('head');
       console.log('Адаптивные стили для страницы «Дизайнеры» подгружены.');
+      break;
+    case '/gallery':
+      $('<script/>',
+        {
+          src: 'https://fashiontilda.imfast.io/build/js/photo.js',
+          type: 'text/javascript'
+        }
+      ).appendTo('head');
+      console.log('Адаптивные стили для страницы «Фото» подгружены.');
       break;
     default:
       break;

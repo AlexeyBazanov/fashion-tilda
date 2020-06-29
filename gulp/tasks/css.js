@@ -4,7 +4,7 @@ const plumber = require('gulp-plumber');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+// const cssnano = require('cssnano');
 const gcmq = require('gulp-group-css-media-queries');
 const size = require('gulp-size');
 // const usedcss = require('usedcss');
@@ -32,7 +32,11 @@ const css = () => {
         postcss([
           // usedcss({ html: ['src/index.html'] }),
           autoprefixer(),
-          cssnano(),
+          require('cssnano')({
+            preset: ['default', {
+              normalizeString: { preferredQuote: 'single' }
+            }]
+          }),
         ]),
       ),
     )

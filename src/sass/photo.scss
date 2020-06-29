@@ -1,0 +1,120 @@
+#allrecords > .t-rec {
+  display: none !important;
+}
+
+.photo-title, .photo-season, .photo-date {
+  color: #000000;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.2;
+  text-align: center;
+  word-wrap: break-word;
+  text-transform: uppercase;
+}
+
+.photo-title {
+  margin-bottom: 30px;
+  margin-top: 70px;
+  font-size: 55px;
+}
+
+.photo-season {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.photo-date {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.photo-session-name {
+  padding: 0 15px;
+  color: #000000;
+  font-size: 22px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  line-height: 1.4;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.photo-session-gallery-link {
+  display: block;
+  width: 185px;
+  height: 40px;
+  line-height: 45px;
+  margin: 0 auto;
+  background: #3d3936;
+  color: white !important;
+  font-size: 22px;
+  font-family: 'BebasNeue',Arial,sans-serif;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover, &:active {
+    opacity: 0.7;
+  }
+}
+
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.ajax-sending {
+
+  opacity: 0.8;
+
+  &:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #000;
+    animation: spinner .6s linear infinite;
+  }
+
+}
+
+.swiper-lazy {
+  height: 380px !important;
+  margin-bottom: 10px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+
+  &.swiper-lazy-instagram {
+    height: 180px !important;
+    background-size: 260px !important;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ff8903 !important;
+}
+
+.swiper-lazy-preloader {
+  border-color: #ff8903 !important;
+  border-top-color: transparent !important;
+}
+
+.swiper-container {
+  margin: 10px 0 45px 0;
+  background: white !important;
+
+  &.swiper-container-instagram {
+    height: 180px !important;
+  }
+}
