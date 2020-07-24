@@ -14,7 +14,7 @@ $(document).ready(function () {
   // Подгружаем стили для слайдера
   $("<link>", {
     rel: "stylesheet",
-    href: "https://unpkg.com/swiper/css/swiper.min.css",
+    href: "https://unpkg.com/swiper@5.4.5/css/swiper.min.css",
   }).appendTo("head");
 
 
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   // Подгружаем скрипт слайдера, при его инициализации создаем слайдеры на странице
   var slider = document.createElement("script");
-  slider.setAttribute("src", "https://unpkg.com/swiper/js/swiper.min.js");
+  slider.setAttribute("src", "https://unpkg.com/swiper@5.4.5/js/swiper.min.js");
   document.body.appendChild(slider);
 
   slider.addEventListener("load", function() {
